@@ -15,6 +15,8 @@ export interface ITask {
 
 export interface ITaskDoc extends ITask, Document {}
 
+export type UpdateTaskBody = Partial<ITask>
+
 export interface ITaskModel extends Model<ITaskDoc> {
   paginate(filter: Record<string, any>, options: Record<string, any>): Promise<QueryResult>;
 }
