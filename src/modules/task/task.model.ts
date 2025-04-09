@@ -16,9 +16,11 @@ const taskSchema = new Schema<ITaskDoc, ITaskModel>(
   }
 );
 
-
 taskSchema.plugin(toJSON);
 taskSchema.plugin(paginate);
+
+taskSchema.index({ priority: 1 });
+taskSchema.index({ completed: 1 });
 
 const Task = mongoose.model<ITaskDoc, ITaskModel>('Task', taskSchema);
 
