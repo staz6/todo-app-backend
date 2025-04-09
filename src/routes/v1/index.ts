@@ -22,7 +22,7 @@ const defaultIRoute: IRoute[] = [
     route: userRoute,
   },
   {
-    path: 'tasks',
+    path: '/tasks',
     route: taskRoute,
   },
 ];

@@ -8,7 +8,7 @@ import { IOptions } from '../paginate/paginate';
 import { ApiError } from '../errors';
 
 export const createTask = catchAsync(async (req: Request, res: Response) => {
-  const task = await taskService.createTask(req.body);
+  const task = await taskService.createTask({ ...req.body, userId: req.user.id });
   res.status(httpStatus.CREATED).send(task);
 });
 
